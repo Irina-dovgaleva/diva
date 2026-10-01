@@ -1720,3 +1720,29 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-03.светлый .формат__ссылка { color: var(--цвет-акцент); }
   #экран-03.тёмный .формат__ссылка { color: var(--цвет-акцент-яркий); }
   @media (max-width: 899px) { #экран-03 .форматы { grid-template-columns: 1fr; } }
+
+/* экран 04 */
+#экран-04 .разворот { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(32px, 7vw, 112px); align-items: center; }
+  #экран-04 .портрет { margin: 0; position: relative; padding: clamp(10px, 1.4vw, 18px); border: 1px solid var(--цвет-линия); }
+  #экран-04 .портрет .заглушка-картинки { aspect-ratio: 3 / 4; width: 100%; }
+  #экран-04 .рассказ { display: grid; gap: clamp(14px, 1.6vw, 22px); justify-items: start; }
+  #экран-04 .рассказ > * { margin: 0; }
+  #экран-04 .имя { font-size: var(--кегль-лид); line-height: 1.35; font-weight: 600; letter-spacing: .02em; }
+  #экран-04 .рассказ p:not(.кикер):not(.имя) { font-size: var(--кегль-текст); line-height: 1.75; max-width: 34rem; }
+  #экран-04 .рассказ p.вступ:not(.кикер) { font-size: var(--кегль-лид); line-height: 1.6; }
+  #экран-04 .регалии { list-style: none; margin: clamp(10px, 2vw, 24px) 0 0; padding: 0; width: 100%; max-width: 40rem; }
+  #экран-04 .регалия { display: grid; grid-template-columns: 2rem minmax(0, 1fr); gap: 18px; align-items: start; padding-block: 18px; border-top: 1px solid var(--цвет-линия); }
+  #экран-04 .регалия:last-child { border-bottom: 1px solid var(--цвет-линия); }
+  #экран-04 .регалия .иконка { width: 1.6rem; height: 1.6rem; }
+  #экран-04 .регалия span { font-size: var(--кегль-текст); line-height: 1.5; }
+  #экран-04.светлый .регалия .иконка { color: var(--цвет-тёплый-тёмный, var(--цвет-акцент-тёмный)); }
+  #экран-04.тёмный .регалия .иконка { color: var(--цвет-акцент-яркий); }
+  #экран-04.светлый .имя { color: var(--цвет-акцент); }
+  #экран-04.тёмный .имя { color: var(--цвет-акцент-яркий); }
+  #экран-04.светлый { background: var(--цвет-фон-2); }
+  #экран-04.светлый .рассказ p:not(.кикер):not(.имя), #экран-04.светлый .регалия span { color: var(--цвет-текст); }
+  #экран-04.тёмный .рассказ p:not(.кикер):not(.имя), #экран-04.тёмный .регалия span { color: color-mix(in srgb, var(--текст-ключа, var(--цвет-тёмный-текст)) 82%, transparent); }
+  @media (max-width: 899px) {
+    #экран-04 .разворот { grid-template-columns: 1fr; gap: 32px; }
+    #экран-04 .портрет { max-width: 17rem; }
+  }
