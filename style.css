@@ -1770,27 +1770,35 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   }
 
 /* экран 06 */
-#экран-06 .вводка { display: grid; justify-items: center; gap: 18px; text-align: center; margin-bottom: clamp(36px, 5vw, 72px); }
+#экран-06 .вводка { display: grid; justify-items: start; gap: 18px; margin-bottom: clamp(32px, 5vw, 64px); }
   #экран-06 .вводка > * { margin: 0; }
-  #экран-06 .голоса { list-style: none; margin: 0 auto; padding: 0; max-width: 64rem; display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: clamp(20px, 3vw, 40px); }
-  #экран-06 .голос { position: relative; display: grid; align-content: space-between; gap: clamp(24px, 3vw, 40px); padding: clamp(28px, 3.4vw, 48px); border: 1px solid var(--цвет-линия); border-radius: var(--радиус); }
-  #экран-06 .голос:nth-child(even) { margin-top: clamp(0px, 4vw, 56px); }
-  #экран-06 .цитата { margin: 0; font-size: var(--кегль-лид); line-height: 1.6; }
-  #экран-06 .автор { display: grid; gap: 6px; padding-top: 18px; border-top: 1px solid var(--цвет-линия); }
+  #экран-06 .отзыв { margin: 0; display: grid; align-content: start; gap: clamp(16px, 2vw, 24px); border: 0 solid var(--цвет-линия); }
+  #экран-06 .отзыв--пусто { border-style: dashed; }
+  #экран-06 .цитата { margin: 0; line-height: 1.5; }
+  #экран-06 .отзыв--пусто .цитата { font-style: italic; }
+  #экран-06 .автор { display: grid; gap: 4px; }
   #экран-06 .автор b { font-weight: 600; font-size: var(--кегль-текст); letter-spacing: .04em; }
   #экран-06 .автор span { font-size: var(--кегль-мелкий); line-height: 1.4; }
-  #экран-06.светлый { background: var(--цвет-фон-2); }
-  #экран-06.светлый .голос { background: var(--цвет-фон); }
-  #экран-06.тёмный .голос { background: color-mix(in srgb, var(--текст-ключа, var(--цвет-тёмный-текст)) 6%, transparent); }
+  #экран-06 .отзыв--главный { border-top-width: 1px; border-bottom-width: 1px; padding-block: clamp(32px, 5vw, 64px); max-width: 60rem; }
+  #экран-06 .отзыв--главный .цитата { font-size: var(--кегль-h2); line-height: 1.3; }
+  #экран-06 .ряд { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  #экран-06 .ряд .отзыв { padding: clamp(28px, 4vw, 48px) clamp(20px, 3vw, 44px); border-left-width: 1px; }
+  #экран-06 .ряд .отзыв:first-child { border-left-width: 0; padding-left: 0; }
+  #экран-06 .ряд .отзыв:last-child { padding-right: 0; }
+  #экран-06 .ряд .цитата { font-size: var(--кегль-лид); }
   #экран-06.светлый .цитата { color: var(--цвет-текст); }
   #экран-06.тёмный .цитата { color: var(--текст-ключа, var(--цвет-тёмный-текст)); }
   #экран-06.светлый .автор b { color: var(--цвет-акцент); }
   #экран-06.тёмный .автор b { color: var(--цвет-акцент-яркий); }
   #экран-06.светлый .автор span { color: var(--цвет-текст-мягкий); }
   #экран-06.тёмный .автор span { color: color-mix(in srgb, var(--текст-ключа, var(--цвет-тёмный-текст)) 72%, transparent); }
+  #экран-06.светлый .отзыв { border-color: var(--цвет-линия); }
+  #экран-06.тёмный .отзыв { border-color: color-mix(in srgb, var(--текст-ключа, var(--цвет-тёмный-текст)) 28%, transparent); }
   @media (max-width: 799px) {
-    #экран-06 .голоса { grid-template-columns: 1fr; }
-    #экран-06 .голос:nth-child(even) { margin-top: 0; }
+    #экран-06 .ряд { grid-template-columns: minmax(0, 1fr); }
+    #экран-06 .ряд .отзыв { padding: 28px 0; border-left-width: 0; border-top-width: 1px; }
+    #экран-06 .ряд .отзыв:first-child { border-top-width: 0; padding-top: 28px; }
+    #экран-06 .отзыв--главный { padding-block: 28px; }
   }
 
 /* экран 07 */
