@@ -1746,3 +1746,25 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     #экран-04 .разворот { grid-template-columns: 1fr; gap: 32px; }
     #экран-04 .портрет { max-width: 17rem; }
   }
+
+/* экран 05 */
+#экран-05 .верх { display: grid; justify-items: center; gap: 18px; text-align: center; margin-bottom: clamp(32px, 5vw, 64px); }
+  #экран-05 .верх h2 { margin: 0; }
+  #экран-05 .верх::after { content: ""; width: 56px; height: 1px; }
+  #экран-05 .верх::after { order: 1; }
+  #экран-05 .мозаика { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: clamp(14px, 2vw, 28px); max-width: 68rem; margin-inline: auto; }
+  #экран-05 .пара { grid-column: span 3; margin: 0; padding: clamp(8px, 1vw, 12px); border: 1px solid var(--цвет-линия); border-radius: var(--радиус-малый); min-width: 0; }
+  #экран-05 .пара:nth-child(-n+3) { grid-column: span 2; }
+  #экран-05 .пара .заглушка-картинки { width: 100%; aspect-ratio: 4 / 3; min-height: 0; }
+  #экран-05 .согласие { margin: clamp(22px, 3vw, 36px) 0 0; text-align: center; font-size: var(--кегль-мелкий); line-height: 1.5; }
+  #экран-05.светлый .верх::after { background: var(--цвет-акцент-яркий); }
+  #экран-05.тёмный .верх::after { background: var(--цвет-акцент-яркий); }
+  #экран-05.светлый .пара { background: var(--цвет-фон); }
+  #экран-05.тёмный .пара { border-color: color-mix(in srgb, var(--цвет-тёмный-текст) 18%, transparent); }
+  #экран-05.светлый .согласие { color: var(--цвет-текст-тихий); }
+  #экран-05.тёмный .согласие { color: color-mix(in srgb, var(--цвет-тёмный-текст) 72%, transparent); }
+  @media (max-width: 899px) {
+    #экран-05 .мозаика { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: 6px; margin-inline: calc(var(--отступ-блока) * -1); padding-inline: var(--отступ-блока); scroll-padding-inline: var(--отступ-блока); }
+    #экран-05 .мозаика::-webkit-scrollbar { display: none; }
+    #экран-05 .пара, #экран-05 .пара:nth-child(-n+3) { flex: 0 0 78%; scroll-snap-align: start; }
+  }
