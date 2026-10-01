@@ -1668,3 +1668,55 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
 
   body.панель-с-переходом .липкая-кнопка { transition: none; }
 }
+
+/* экран 02 */
+#экран-02 .голова { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(32px, 6vw, 96px); align-items: end; margin-bottom: clamp(40px, 6vw, 80px); }
+  #экран-02 .голова__лево { display: grid; justify-items: start; gap: .875rem; }
+  #экран-02 .голова__лево > * { margin: 0; }
+  #экран-02 .голова .лид { margin: 0; max-width: 32rem; }
+  #экран-02 .нить { list-style: none; margin: 0; padding: 0; counter-reset: н; }
+  #экран-02 .строка { display: grid; grid-template-columns: clamp(56px, 8vw, 112px) minmax(0, 1fr); gap: clamp(12px, 3vw, 40px); align-items: baseline; padding-block: clamp(22px, 3vw, 36px); border-top: 1px solid var(--цвет-линия); }
+  #экран-02 .строка:last-child { border-bottom: 1px solid var(--цвет-линия); }
+  #экран-02 .строка__номер { font-weight: 400; font-size: var(--кегль-h2); line-height: 1; letter-spacing: .02em; }
+  #экран-02 .строка__текст { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 6fr); gap: clamp(12px, 4vw, 64px); align-items: baseline; }
+  #экран-02 .строка__текст b { font-weight: 600; font-size: var(--кегль-лид); line-height: 1.3; }
+  #экран-02 .строка__текст p { margin: 0; font-size: var(--кегль-текст); line-height: 1.65; }
+  #экран-02.светлый .строка__номер { color: var(--цвет-тёплый-тёмный, var(--цвет-акцент-тёмный)); }
+  #экран-02.тёмный .строка__номер { color: var(--цвет-акцент-яркий); }
+  #экран-02.светлый .строка__текст b { color: var(--цвет-акцент); }
+  #экран-02.тёмный .строка__текст b { color: var(--текст-ключа, var(--цвет-тёмный-текст)); }
+  #экран-02.светлый .строка__текст p { color: var(--цвет-текст-мягкий); }
+  #экран-02.тёмный .строка__текст p { color: color-mix(in srgb, var(--текст-ключа, var(--цвет-тёмный-текст)) 78%, transparent); }
+  @media (max-width: 899px) {
+    #экран-02 .голова { grid-template-columns: 1fr; align-items: start; gap: 20px; }
+    #экран-02 .строка__текст { grid-template-columns: 1fr; gap: 8px; }
+    #экран-02 .строка { grid-template-columns: 44px minmax(0, 1fr); }
+  }
+
+/* экран 03 */
+#экран-03 .форматы { display: grid; grid-template-columns: repeat(2, 1fr); gap: clamp(16px, 2.4vw, 32px); margin-top: clamp(28px, 4vw, 48px); max-width: 60rem; margin-inline: auto; }
+  #экран-03 .формат { display: flex; flex-direction: column; align-items: flex-start; gap: 1rem;
+      padding: clamp(24px, 3vw, 40px); border-radius: var(--радиус-карточки); box-shadow: var(--тень); }
+  #экран-03 .формат__плашка { display: inline-block; padding: .4rem .9rem; border-radius: 9em; font-size: var(--кегль-мелкий); }
+  #экран-03 .формат h3 { margin: 0; font-size: var(--кегль-лид); line-height: 1.25; }
+  #экран-03 .формат__описание { margin: 0; font-size: var(--кегль-текст); line-height: 1.55; flex: 1; }
+  #экран-03 .формат__цена { margin: 0; display: flex; align-items: baseline; flex-wrap: wrap; gap: .25rem .75rem; padding-top: 1rem; width: 100%; }
+  #экран-03 .формат__цена b { font-size: var(--кегль-цифра); font-weight: 600; line-height: 1.1; }
+  #экран-03 .формат__цена span { font-size: var(--кегль-мелкий); }
+  #экран-03 .итог { margin: clamp(20px, 3vw, 32px) 0 0; text-align: center; font-size: var(--кегль-мелкий); }
+  #экран-03 .действие-секции { display: flex; justify-content: center; margin-top: clamp(20px, 3vw, 32px); }
+  #экран-03.светлый .формат { background: var(--цвет-фон-карточки); border: 1px solid var(--цвет-линия); }
+  #экран-03.светлый .формат__плашка { background: var(--цвет-фон-2); color: var(--цвет-акцент); }
+  #экран-03.светлый .формат__описание, #экран-03.светлый .формат__цена span, #экран-03.светлый .итог { color: var(--цвет-текст-мягкий); }
+  #экран-03.светлый .формат__цена { border-top: 1px solid var(--цвет-линия); }
+  #экран-03.светлый .формат__цена b { color: var(--цвет-акцент); }
+  #экран-03.тёмный .формат { background: var(--цвет-тёмный-фон-2); border: 1px solid color-mix(in srgb, var(--цвет-тёмный-текст) 14%, transparent); }
+  #экран-03.тёмный .формат__плашка { background: var(--цвет-тёмный-фон-3); color: var(--цвет-акцент-яркий); }
+  #экран-03.тёмный .формат h3, #экран-03.тёмный .формат__цена b { color: var(--цвет-тёмный-текст); }
+  #экран-03.тёмный .формат__описание, #экран-03.тёмный .формат__цена span, #экран-03.тёмный .итог { color: color-mix(in srgb, var(--цвет-тёмный-текст) 78%, transparent); }
+  #экран-03.тёмный .формат__цена { border-top: 1px solid color-mix(in srgb, var(--цвет-тёмный-текст) 14%, transparent); }
+  #экран-03 .формат__ссылка { font-size: var(--кегль-текст); font-weight: 600; text-decoration: none; border-bottom: 1px solid currentColor; padding-bottom: 2px; transition: opacity var(--длительность) var(--плавность); }
+  #экран-03 .формат__ссылка:hover { opacity: .7; }
+  #экран-03.светлый .формат__ссылка { color: var(--цвет-акцент); }
+  #экран-03.тёмный .формат__ссылка { color: var(--цвет-акцент-яркий); }
+  @media (max-width: 899px) { #экран-03 .форматы { grid-template-columns: 1fr; } }
