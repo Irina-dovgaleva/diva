@@ -1792,3 +1792,34 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
     #экран-06 .голоса { grid-template-columns: 1fr; }
     #экран-06 .голос:nth-child(even) { margin-top: 0; }
   }
+
+/* экран 07 */
+#экран-07 .раскладка { display: grid; grid-template-columns: minmax(0, 5fr) minmax(0, 7fr); grid-template-areas: "вводка вопросы" "приглашение вопросы"; grid-template-rows: auto 1fr; column-gap: clamp(40px, 7vw, 120px); row-gap: clamp(28px, 4vw, 48px); align-items: start; }
+  #экран-07 .вводка { grid-area: вводка; display: grid; gap: 1.25rem; align-content: start; justify-items: start; }
+  #экран-07 .вводка > * { margin: 0; }
+  #экран-07 .приглашение { grid-area: приглашение; display: grid; gap: .5rem; justify-items: start; padding-top: clamp(20px, 3vw, 32px); border-top: 1px solid var(--цвет-линия); }
+  #экран-07 .приглашение > * { margin: 0; }
+  #экран-07 .приглашение h3 { font-weight: 500; font-size: var(--кегль-лид); line-height: 1.25; }
+  #экран-07 .приглашение .приглашение__текст { font-size: var(--кегль-текст); line-height: 1.6; }
+  #экран-07 .приглашение .действие-секции { margin-top: 1rem; }
+  #экран-07 .вопросы { grid-area: вопросы; gap: 0; }
+  #экран-07 .вопросы .вопрос { background: transparent; border: 0; border-bottom: 1px solid var(--цвет-линия); border-radius: 0; }
+  #экран-07 .вопросы .вопрос:first-of-type { border-top: 1px solid var(--цвет-линия); }
+  #экран-07 .вопросы .вопрос__шапка { padding: 1.5rem 0; font-size: var(--кегль-лид); line-height: 1.3; }
+  #экран-07 .вопросы .вопрос__тело { padding: 0 2.5rem 1.75rem 0; max-width: 40rem; }
+  #экран-07.светлый .приглашение { border-top-color: var(--цвет-линия); }
+  #экран-07.светлый .приглашение .приглашение__текст { color: var(--цвет-текст-мягкий); }
+  #экран-07.светлый .вопросы .вопрос { border-bottom-color: var(--цвет-линия); }
+  #экран-07.светлый .вопросы .вопрос:first-of-type { border-top-color: var(--цвет-линия); }
+  #экран-07.светлый .вопросы .вопрос__шеврон { color: var(--цвет-акцент); }
+  #экран-07.светлый .вопросы .вопрос__тело { color: var(--цвет-текст-мягкий); }
+  #экран-07.тёмный .приглашение { border-top-color: color-mix(in srgb, var(--цвет-тёмный-текст) 14%, transparent); }
+  #экран-07.тёмный .приглашение h3, #экран-07.тёмный .вопрос__шапка { color: var(--цвет-тёмный-текст); }
+  #экран-07.тёмный .приглашение .приглашение__текст, #экран-07.тёмный .вопросы .вопрос__тело { color: color-mix(in srgb, var(--цвет-тёмный-текст) 78%, transparent); }
+  #экран-07.тёмный .вопросы .вопрос { background: transparent; border-color: color-mix(in srgb, var(--цвет-тёмный-текст) 14%, transparent); }
+  #экран-07.тёмный .вопросы .вопрос__шеврон { color: var(--цвет-акцент-яркий); }
+  @media (max-width: 899px) {
+    #экран-07 .раскладка { grid-template-columns: minmax(0, 1fr); grid-template-areas: "вводка" "вопросы" "приглашение"; grid-template-rows: none; }
+    #экран-07 .вопросы .вопрос__шапка { padding: 1.25rem 0; }
+    #экран-07 .вопросы .вопрос__тело { padding-right: 0; }
+  }
