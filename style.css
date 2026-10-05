@@ -1733,6 +1733,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-04 .регалии { list-style: none; margin: clamp(10px, 2vw, 24px) 0 0; padding: 0; width: 100%; max-width: 40rem; }
   #экран-04 .регалия { display: grid; grid-template-columns: 2rem minmax(0, 1fr); gap: 18px; align-items: start; padding-block: 18px; border-top: 1px solid var(--цвет-линия); }
   #экран-04 .регалия:last-child { border-bottom: 1px solid var(--цвет-линия); }
+  #экран-04 .регалия a { color: inherit; text-decoration: underline; text-decoration-thickness: 1px; text-underline-offset: .2em; }
   #экран-04 .регалия .иконка { width: 1.6rem; height: 1.6rem; }
   #экран-04 .регалия span { font-size: var(--кегль-текст); line-height: 1.5; }
   #экран-04.светлый .регалия .иконка { color: var(--цвет-тёплый-тёмный, var(--цвет-акцент-тёмный)); }
