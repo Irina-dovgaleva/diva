@@ -1723,8 +1723,8 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
 
 /* экран 04 */
 #экран-04 .разворот { display: grid; grid-template-columns: minmax(0, 4fr) minmax(0, 7fr); gap: clamp(32px, 7vw, 112px); align-items: center; }
-  #экран-04 .портрет { margin: 0; position: relative; padding: clamp(10px, 1.4vw, 18px); border: 1px solid var(--цвет-линия); }
-  #экран-04 .портрет .заглушка-картинки { aspect-ratio: 3 / 4; width: 100%; }
+  #экран-04 .портрет { margin: 0; position: relative; border-radius: 0; box-shadow: none; overflow: visible; padding: clamp(10px, 1.4vw, 18px); border: 1px solid var(--цвет-линия); }
+  #экран-04 .портрет img { display: block; aspect-ratio: 4 / 5; width: 100%; height: auto; object-fit: cover; }
   #экран-04 .рассказ { display: grid; gap: clamp(14px, 1.6vw, 22px); justify-items: start; }
   #экран-04 .рассказ > * { margin: 0; }
   #экран-04 .имя { font-size: var(--кегль-лид); line-height: 1.35; font-weight: 600; letter-spacing: .02em; }
@@ -1753,9 +1753,10 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-05 .верх::after { content: ""; width: 56px; height: 1px; }
   #экран-05 .верх::after { order: 1; }
   #экран-05 .мозаика { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: clamp(14px, 2vw, 28px); max-width: 68rem; margin-inline: auto; }
-  #экран-05 .пара { grid-column: span 3; margin: 0; padding: clamp(8px, 1vw, 12px); border: 1px solid var(--цвет-линия); border-radius: var(--радиус-малый); min-width: 0; }
-  #экран-05 .пара:nth-child(-n+3) { grid-column: span 2; }
-  #экран-05 .пара .заглушка-картинки { width: 100%; aspect-ratio: 4 / 3; min-height: 0; }
+  #экран-05 .пара { grid-column: span 3; margin: 0; box-shadow: none; overflow: visible; padding: clamp(8px, 1vw, 12px); border: 1px solid var(--цвет-линия); border-radius: var(--радиус-малый); min-width: 0; }
+  #экран-05 .пара:nth-child(n+5) { grid-column: span 2; }
+  #экран-05 .пара img { display: block; width: 100%; height: auto; aspect-ratio: 1 / 1; object-fit: cover; }
+  #экран-05 .пара img.целиком { object-fit: contain; }
   #экран-05 .согласие { margin: clamp(22px, 3vw, 36px) 0 0; text-align: center; font-size: var(--кегль-мелкий); line-height: 1.5; }
   #экран-05.светлый .верх::after { background: var(--цвет-акцент-яркий); }
   #экран-05.тёмный .верх::after { background: var(--цвет-акцент-яркий); }
@@ -1766,7 +1767,7 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   @media (max-width: 899px) {
     #экран-05 .мозаика { display: flex; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none; padding-bottom: 6px; margin-inline: calc(var(--отступ-блока) * -1); padding-inline: var(--отступ-блока); scroll-padding-inline: var(--отступ-блока); }
     #экран-05 .мозаика::-webkit-scrollbar { display: none; }
-    #экран-05 .пара, #экран-05 .пара:nth-child(-n+3) { flex: 0 0 78%; scroll-snap-align: start; }
+    #экран-05 .пара, #экран-05 .пара:nth-child(n+5) { flex: 0 0 78%; scroll-snap-align: start; }
   }
 
 /* экран 06 */
@@ -1782,10 +1783,10 @@ h2 .хвост-акцент { display: block; font-weight: 600; font-size: .6em;
   #экран-06 .отзыв--главный { border-top-width: 1px; border-bottom-width: 1px; padding-block: clamp(32px, 5vw, 64px); max-width: 60rem; }
   #экран-06 .отзыв--главный .цитата { font-size: var(--кегль-h2); line-height: 1.3; }
   #экран-06 .ряд { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); }
+  #экран-06 .ряд .цитата { font-size: var(--кегль-лид); }
   #экран-06 .ряд .отзыв { padding: clamp(28px, 4vw, 48px) clamp(20px, 3vw, 44px); border-left-width: 1px; }
   #экран-06 .ряд .отзыв:first-child { border-left-width: 0; padding-left: 0; }
   #экран-06 .ряд .отзыв:last-child { padding-right: 0; }
-  #экран-06 .ряд .цитата { font-size: var(--кегль-лид); }
   #экран-06.светлый .цитата { color: var(--цвет-текст); }
   #экран-06.тёмный .цитата { color: var(--текст-ключа, var(--цвет-тёмный-текст)); }
   #экран-06.светлый .автор b { color: var(--цвет-акцент); }
